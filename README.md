@@ -1,2 +1,2 @@
 # algorithm-practice
-data structure practice
+Algorithm study from beginner to advanced 
