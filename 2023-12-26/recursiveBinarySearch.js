@@ -2,21 +2,21 @@
 // Return -1 if the target element is not found 
 
 function search(arr, target, leftIndex, rightIndex) {
-    if (leftIndex > rightIndex) {
+   if (leftIndex > rightIndex) { 
         return -1; 
-    }
+   }
 
-    let middleIndex = Math.floor((leftIndex + rightIndex) / 2); 
+   let middleIndex = Math.floor((leftIndex + rightIndex) / 2); 
 
-    if (target === arr[middleIndex]) {
-        return middleIndex 
-    }
+   if (arr[middleIndex] === target) {
+        return middleIndex; 
+   }
 
-    if (target < arr[middleIndex]) {
+   if (arr[middleIndex] > target) {
         return search(arr, target, leftIndex, middleIndex - 1); 
-    } else {
+   } else {
         return search(arr, target, middleIndex + 1, rightIndex); 
-    }
+   }
 }
 
 function recursiveBinarySearch(arr, target) {
@@ -24,5 +24,5 @@ function recursiveBinarySearch(arr, target) {
 }
 
 console.log(recursiveBinarySearch([-5,2,4,6,10], 10)); // 4
-console.log(recursiveBinarySearch([-5,2,4,6,10], 6)); // 3
+console.log(recursiveBinarySearch([-5,2,4,6,10], -7)); // 3
 console.log(recursiveBinarySearch([-5,2,4,6,10], 20)); // -1 
